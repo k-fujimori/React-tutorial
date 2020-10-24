@@ -17,7 +17,7 @@ class Board extends React.Component {
         />);
     }
     render() {
-        return (
+ /*       return (
             <div>
                 <div className="board-row">
                     {this.renderSquare(0)}
@@ -34,6 +34,19 @@ class Board extends React.Component {
                     {this.renderSquare(7)}
                     {this.renderSquare(8)}
                 </div>
+            </div>
+        );
+        */
+        const items =[];
+        for (let i =0; i < 3; i++) {
+            items.push(<div className = "board-row"></div>)
+            for(let j =0; j < 3; j++) {
+                items.push(this.renderSquare(i*3+j));
+            }
+        }      
+        return (
+            <div> 
+                {items}
             </div>
         );
     }
